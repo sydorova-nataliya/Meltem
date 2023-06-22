@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    border-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+    transition: all ease-out 0.3s;
+}
+
+form,
+fieldset {
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+textarea,
+select {
+    font: 100% Arial, sans-serif;
+    outline: none;
+    vertical-align: middle;
+}
+
+input[type='submit'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

@@ -1,0 +1,123 @@
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  font-size: 400;
+  &__telephone{
+    font-weight: 600;
+  }
+}
+.btn{
+  min-width: 140px;
+  background-color: $light-grey;
+  color: $white;
+  border: 1px solid $light-grey;
+  padding: 0.5% 2%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-out 0.3s;
+  &:hover, &.active{
+    background-color: $white;
+    color: $light-grey;
+  }
+}
+.container{
+  margin: 30px 60px 0 60px;
+}
+.header-list{
+  display: flex;
+  justify-content: space-between;
+  .header__item{
+    list-style-type: none;
+    @include list;
+    display: inline-block;
+  }
+}
+.list-lang{
+  @include list;
+  &__item{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  &__link{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    &:hover{
+      padding: 5px 7px;
+      border-radius: 8px;
+      background: $light-grey;
+      margin: 0 -7px;
+      color: $white;
+  }
+    &.active{
+      display: inline-block;
+      padding: 5px 7px;
+      border-radius: 4px;
+      background: $light-grey;
+      margin: 0 -7px ;
+      color: $white;
+    }
+  }
+
+
+}
+
+.main{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 85%;
+    bottom: -20px;
+    height: 1%;
+    border-radius: 12px;
+    background-color: $light-grey;
+  }
+  .container{
+    padding: 70px 0;
+  }
+
+  &__center{
+    align-self: center;
+    width: 20%;
+  }
+  &__end{
+    align-self: flex-end;
+    width: 20%;
+  }
+  &__title{
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 65px;
+    margin: 0;
+  }
+  &__subtitle{
+    font-weight: bold;
+    font-size:24px;
+    line-height: 32px;
+  }
+  &__text{
+    font-weight: 300;
+    font-style: normal;
+    color: $black;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .btn{
+    padding: 3% 5%;
+    &_main:hover{
+      background-color: $light-grey;
+      color: $white;
+      border: 1px solid $light-grey;
+    }
+  }
+}
