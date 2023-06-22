@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.main.js"></script>
     <link rel="stylesheet" href="css/main.min.css">
@@ -26,7 +28,7 @@
                 <li class="header__item"><a href="header__link">Контакти</a></li>
             </ul>
         <a class="header__telephone" href="tel:0800000000">0 (800) 00-00-00</a>
-        <button class="btn">Зв'язатись</button>
+        <button id="state-btn" class="btn">Зв'язатись</button>
         <ul class="list-lang">
             <li class="list-lang__item"><a class="list-lang__link" href="#">UA</a></li>
             <li class="list-lang__item"><a class="list-lang__link" href="#">RU</a></li>
@@ -34,16 +36,31 @@
     </header>
     <main class="main container">
         <div class="main__center">
-            <h1 class="main__title">Meltem</h1>
-            <h1 class="main__text">Meltem – це гарантовано якісне вентиляційне обладнання від німецького заводу.</h1>
+            <h1 class="title">Meltem</h1>
+            <p class="text">Meltem – це гарантовано якісне вентиляційне обладнання від німецького заводу.</p>
             <button class="btn">Продукція</button>
         </div>
         <img src="img/main.svg" alt="" srcset="">
         <div class="main__end">
-            <h1 class="main__text">Відцентровий витяжний вентилятор</h1>
-            <h1 class="main__subtitle">Meltem V-II 30-N</h1>
+            <h2 class="text">Відцентровий витяжний вентилятор</h2>
+            <p class="main__subtitle">Meltem V-II 30-N</p>
             <button class="btn btn_main active">Детальніше</button>
         </div>
     </main>
+
+    <div class="state hidden">
+        <div class="state__close">
+            <span class="state__close-slash1"></span>
+            <span class="state__close-slash2"></span>
+        </div>
+        <h2 class="state__title title">Залишайте заявку</h2>
+        <p class="state__text text">Ми зв’яжемося з вами найближчим часом.</p>
+        <form action="">
+            <input type="text" class="state__input" placeholder="Ваше ім'я*" required>
+            <input type="text" class="state__input phone" name="" id="" placeholder="+380-00-000-00-00*" required>
+            <button class="state__btn btn">Відправить</button>
+        </form>
+        <p class="state__subtext">Натискаючи кнопку “Надіслати”, ви погоджуєтесь з <br><a class="state__link">Правилами обробки персональних даних.</a></p>
+    </div>
 </body>
 </html>
