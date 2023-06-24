@@ -2,13 +2,34 @@ body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+.blur{
+  filter: blur(4px);
+}
+.title{
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 65px;
+  margin: 0;
+}
+.text{
+  font-weight: 300;
+  font-style: normal;
+  color: $black;
+  font-size: 20px;
+  line-height: 26px;
+}
 .header{
   display: flex;
   justify-content:space-between;
   align-items: center;
   font-size: 400;
+  transition: all ease-out 0.3s;
+
   &__telephone{
     font-weight: 600;
+    &:hover{
+      transform: scale(1.1)
+    }
   }
 }
 .btn{
@@ -30,11 +51,16 @@ body{
 }
 .header-list{
   display: flex;
+  width: 30%;
   justify-content: space-between;
   .header__item{
     list-style-type: none;
     @include list;
     display: inline-block;
+    transition: all ease-out 0.3s;
+    &:hover{
+      transform: scale(1.1)
+    }
   }
 }
 .list-lang{
@@ -63,8 +89,6 @@ body{
       color: $white;
     }
   }
-
-
 }
 
 .main{
@@ -94,30 +118,91 @@ body{
     align-self: flex-end;
     width: 20%;
   }
-  &__title{
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 65px;
-    margin: 0;
-  }
+
   &__subtitle{
     font-weight: bold;
     font-size:24px;
     line-height: 32px;
   }
-  &__text{
-    font-weight: 300;
-    font-style: normal;
-    color: $black;
-    font-size: 20px;
-    line-height: 26px;
-  }
+
   .btn{
     padding: 3% 5%;
     &_main:hover{
       background-color: $light-grey;
       color: $white;
       border: 1px solid $light-grey;
+    }
+  }
+}
+
+.state{
+  position: relative;
+  background-color: $white;
+  padding: 2%;
+  &__title{
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 500;
+  }
+  &__text{
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8%;
+  }
+  &__link{
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &.active{
+    position:absolute;
+    top: 20%;
+    left: 40%;
+  }
+  &.hidden{
+    display: none;
+  }
+  &__input{
+    display: block;
+    padding: 2%;
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+  }
+  &__subtext{
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &__btn{
+    width: 100%;
+    padding: 3%;
+  }
+  &__close{
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    &-slash1{
+      position: absolute;
+      background-color: $black;
+      width: 100%;
+      height: 8%;
+      top: 50%;
+      right: 30%;
+      transform: rotate(45deg);
+    }
+    &-slash2{
+      position: absolute;
+      background-color: $black;
+      width: 100%;
+      height: 8%;
+      top: 50%;
+      right: 30%;
+      transform: rotate(-45deg);
     }
   }
 }
