@@ -23,8 +23,13 @@ body{
   justify-content:space-between;
   align-items: center;
   font-size: 400;
+  transition: all ease-out 0.3s;
+
   &__telephone{
     font-weight: 600;
+    &:hover{
+      transform: scale(1.1)
+    }
   }
 }
 .btn{
@@ -46,11 +51,16 @@ body{
 }
 .header-list{
   display: flex;
+  width: 30%;
   justify-content: space-between;
   .header__item{
     list-style-type: none;
     @include list;
     display: inline-block;
+    transition: all ease-out 0.3s;
+    &:hover{
+      transform: scale(1.1)
+    }
   }
 }
 .list-lang{
@@ -79,8 +89,6 @@ body{
       color: $white;
     }
   }
-
-
 }
 
 .main{
@@ -161,7 +169,7 @@ body{
     padding: 2%;
     width: 100%;
     margin-bottom: 2%;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   &__subtext{
     font-size: 13px;
@@ -182,8 +190,8 @@ body{
       position: absolute;
       background-color: $black;
       width: 100%;
-      height: 4%;
-      top: 30%;
+      height: 8%;
+      top: 50%;
       right: 30%;
       transform: rotate(45deg);
     }
@@ -191,8 +199,8 @@ body{
       position: absolute;
       background-color: $black;
       width: 100%;
-      height: 4%;
-      top: 30%;
+      height: 8%;
+      top: 50%;
       right: 30%;
       transform: rotate(-45deg);
     }
