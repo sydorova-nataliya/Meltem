@@ -18,6 +18,9 @@ body{
   font-size: 20px;
   line-height: 26px;
 }
+.error{
+  border: 2px solid red;
+}
 .header{
   display: flex;
   justify-content:space-between;
@@ -30,6 +33,32 @@ body{
     &:hover{
       transform: scale(1.1)
     }
+  }
+}
+.close{
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  &-slash1{
+    position: absolute;
+    background-color: $black;
+    width: 100%;
+    height: 8%;
+    top: 50%;
+    right: 30%;
+    transform: rotate(45deg);
+  }
+  &-slash2{
+    position: absolute;
+    background-color: $black;
+    width: 100%;
+    height: 8%;
+    top: 50%;
+    right: 30%;
+    transform: rotate(-45deg);
   }
 }
 .btn{
@@ -48,6 +77,9 @@ body{
 }
 .container{
   margin: 30px 60px 0 60px;
+  @media screen and (max-width:1439px){
+    margin: 30px 30px 0 30px;
+  }
 }
 .header-list{
   display: flex;
@@ -96,6 +128,9 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width:1439px){
+    display: block;
+  }
   &::after{
     content: '';
     position: absolute;
@@ -105,24 +140,57 @@ body{
     height: 1%;
     border-radius: 12px;
     background-color: $light-grey;
+    @media screen and (max-width:1439px){
+      left: 45%;
+      right: 0;
+      bottom: -30px;
+      height: 0.5%;
+      border-radius: 12px;
+      background-color: $light-grey;
+    }
+    @media screen and (max-width:767px) {
+      left: 0%;
+    }
   }
   .container{
     padding: 70px 0;
   }
-
+  &__photo{
+    @media screen and (max-width:1439px){
+      display: flex;
+      justify-content: center;
+    }
+  }
   &__center{
     align-self: center;
     width: 20%;
+    @media screen and (max-width:1439px){
+      width: 50%;
+    }
+    @media screen and (max-width:767px) {
+      width: 100%;
+    }
   }
+
   &__end{
     align-self: flex-end;
     width: 20%;
+    @media screen and (max-width:1439px){
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      margin-left: auto; 
+    }
+    @media screen and (max-width:767px) {
+      width: 100%;
+    }
   }
 
   &__subtitle{
     font-weight: bold;
     font-size:24px;
     line-height: 32px;
+    width: 100%;
   }
 
   .btn{
@@ -179,30 +247,23 @@ body{
     width: 100%;
     padding: 3%;
   }
-  &__close{
-    position: absolute;
-    width: 5%;
-    height: 5%;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    &-slash1{
-      position: absolute;
-      background-color: $black;
-      width: 100%;
-      height: 8%;
-      top: 50%;
-      right: 30%;
-      transform: rotate(45deg);
+
+}
+
+.success{
+    position: relative;
+    background-color: $white;
+    padding: 4%;
+    &.hidden{
+      display: none;
     }
-    &-slash2{
-      position: absolute;
-      background-color: $black;
-      width: 100%;
-      height: 8%;
-      top: 50%;
-      right: 30%;
-      transform: rotate(-45deg);
+    &.active{
+      position:absolute;
+      top: 20%;
+      left: 40%;
     }
-  }
+    &__photo{
+      display: flex;
+      justify-content: center;
+    }
 }
