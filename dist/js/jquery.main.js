@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
     $('.list-lang__link').click(function(e){
         $('.list-lang__link').removeClass('active');
@@ -22,24 +21,64 @@ $( document ).ready(function() {
         $('.state').addClass('hidden');
         $('.header').removeClass('blur');
         $('.main').removeClass('blur');
+        $('.name').removeClass('error');
+        $('.phone').removeClass('error');
+        $('.name').val('');
+        $('.phone').val('');
+    })
+    $('.success__close').click(function(e){
+        $('.success').removeClass('active');
+        $('.success').addClass('hidden');
+        $('.state').addClass('hidden');
+        $('.header').removeClass('blur');
+        $('.main').removeClass('blur');
     })
 
-    jQuery.validator.addMethod("checkMask", function(value, element) {
-        return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
-   });
-   
-   $('form').validate({
-     rules: {
-       ph: {
-         checkMask: true
-       }
-     },
-     messages: {
-       ph: {
-         checkMask: "Введите полный номер телефона"
-       }
-     }
-   });
-   $('.phone').mask("+7(999)999-9999", {autoclear: false});
+
+    $('.phone').inputmask('+(380) 99-999-99-99', { 
+      clearIfNotMatch: true,
+      showMaskOnHover: false
+    });
+
+    jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
+      return /\+\d{3}-\d{2}-\d{3}-\d{2}-\d{2}/g.test(value); 
+    });
+    
+    $('form').validate({
+      errorPlacement: function(error, element) {
+        return true;
+      },
+      highlight: function(element) {
+        $(element).addClass('error');
+      },
+      unhighlight: function(element) {
+        $(element).removeClass('error');
+      },
+      rules: {
+        phone: {
+          required: true,
+          checkMaskPhone: true
+        },
+        name: {
+          required: true
+        }
+      }
+    });
+    
+    $('form').submit(function(event) {
+      if (!$('form').valid() || $('.name').val() ===''){
+        event.preventDefault();
+        if($('.name').val() ===''){
+          $('.name').addClass('error');
+        } 
+      } else {
+        event.preventDefault(); 
+        $('.success').addClass('active');
+        $('.success').removeClass('hidden');
+        $('.state').addClass('hidden');
+        $('.name').val('');
+        $('.phone').val('');
+      }
+    });
 });
 

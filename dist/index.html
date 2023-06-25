@@ -38,7 +38,7 @@
             <p class="text">Meltem – це гарантовано якісне вентиляційне обладнання від німецького заводу.</p>
             <button class="btn">Продукція</button>
         </div>
-        <img src="img/main.svg" alt="" srcset="">
+        <div class="main__photo"><img  src="img/main.svg" alt="" srcset=""></div>
         <div class="main__end">
             <h2 class="text">Відцентровий витяжний вентилятор</h2>
             <p class="main__subtitle">Meltem V-II 30-N</p>
@@ -47,18 +47,28 @@
     </main>
 
     <div class="state hidden">
-        <div class="state__close">
-            <span class="state__close-slash1"></span>
-            <span class="state__close-slash2"></span>
+        <div class="state__close close">
+            <span class="close-slash1"></span>
+            <span class="close-slash2"></span>
         </div>
         <h2 class="state__title title">Залишайте заявку</h2>
         <p class="state__text text">Ми зв’яжемося з вами найближчим часом.</p>
         <form action="">
-            <input type="text" class="state__input" placeholder="Ваше ім'я*" required>
-            <input type="text" class="state__input phone" name="" id="" placeholder="+380-00-000-00-00*" required>
+            <input type="text" class="state__input name" placeholder="Ваше ім'я*">
+           <input type="text" class="state__input phone"  data-rule-required="true" data-rule-minlength="10"  placeholder="+380-00-000-00-00*">
             <button class="state__btn btn">Відправить</button>
         </form>
         <p class="state__subtext">Натискаючи кнопку “Надіслати”, ви погоджуєтесь з <br><a class="state__link">Правилами обробки персональних даних.</a></p>
+    </div>
+
+    <div class="success hidden">
+        <div class="success__close close">
+            <span class="close-slash1"></span>
+            <span class="close-slash2"></span>
+        </div>
+        <div class="success__photo"><img  src="img/done.svg" alt="" srcset=""></div>
+        <h2 class="state__title title">Дякуємо за заявку!</h2>
+        <p class="state__text text">Ваші дані успішно надіслані!</p>
     </div>
 </body>
 </html>
