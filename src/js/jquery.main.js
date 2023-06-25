@@ -21,6 +21,10 @@ $( document ).ready(function() {
         $('.state').addClass('hidden');
         $('.header').removeClass('blur');
         $('.main').removeClass('blur');
+        $('.name').removeClass('error');
+        $('.phone').removeClass('error');
+        $('.name').val('');
+        $('.phone').val('');
     })
     $('.success__close').click(function(e){
         $('.success').removeClass('active');
@@ -63,7 +67,10 @@ $( document ).ready(function() {
     
     $('form').submit(function(event) {
       if (!$('form').valid() || $('.name').val() ===''){
-        event.preventDefault(); 
+        event.preventDefault();
+        if($('.name').val() ===''){
+          $('.name').addClass('error');
+        } 
       } else {
         event.preventDefault(); 
         $('.success').addClass('active');
